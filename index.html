@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Cozy Cusine</title>
+    <style>
+        option:hover{background-color:yellow;}
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Cozy Cuisine</h1>
+    <div class="alert-container"></div>
+    <div class="wrapper">
+        <div>
+            <h2>Add new recipe</h2>
+            <form>
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required />
+                </div>
+                <div class="input-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" required />
+                </div>
+                <div class="input-group">
+                    <label for="cook_time">Cook time:</label>
+                    <input type="number" id="cook_time" required />
+                </div>
+                <div class="input-group">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty" required>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="vegan" />
+                        <label for="vegan">Vegan</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="gluten" />
+                        <label for="gluten">Gluten free</label>
+                    </div>
+                </div>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Recipes</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Cook time</th>
+                    <th>Difficulty</th>
+                    <th>Vegan</th>
+                    <th>Gluten free</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <!-- To be populated from JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html>

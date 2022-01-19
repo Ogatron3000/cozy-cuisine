@@ -1,0 +1,229 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+::selection {
+    color: white;
+    background: #b7ced2;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    font-family: 'BioRhyme', serif;
+    overflow-x: hidden;
+}
+
+main {
+    max-width: 1260px;
+    padding: 0 40px 40px 40px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.wrapper > div:first-child {
+    grid-column: span 12;
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+}
+
+.wrapper > div:last-child {
+    grid-column: span 12;
+    overflow-x: auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper div:first-child {
+        grid-column: span 4;
+    }
+
+    .wrapper div:last-child {
+        grid-column: 6 / span 7;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: #333333;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid #528e86;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #b7ced2;
+}
+
+form {
+
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+label:not([for="vegan"], [for="gluten"]) {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 5px 10px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: 1px solid #528e86;
+    border: 1px solid #528e86;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.checkbox-wrapper {
+    display: inline-block;
+}
+
+.checkbox-wrapper:first-child {
+    margin-right: 16px;
+}
+
+button {
+    padding: 5px 50px;
+    background-color: #528e86;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: rotate(2deg);
+}
+
+/* Hide the original checkbox */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #999;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '✓';
+    color: #528e86;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 5px;
+    top: 0;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* Select */
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+.alert-container {
+    position: absolute;
+    top: 70px;
+    right: 0;
+}
+
+.alert {
+    padding: 10px;
+    width: 160px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transform: translateX(100%);
+    transition: .2s ease-in-out;
+}
+
+.alert-add {
+    background-color: #528e86;
+}
+
+.alert-remove {
+    background-color: #bc4558;
+}
+
+.alert-slide-in {
+    transform: translateX(0);
+}
+
+.alert-slide-out {
+    transform: translateX(100%);
+}
